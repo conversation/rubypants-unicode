@@ -17,9 +17,9 @@ Original SmartyPants by John Gruber
 
 RubyPants is a Ruby port of the smart-quotes library SmartyPants.
 
-The original "SmartyPants" is a free web publishing plug-in for
+The original “SmartyPants” is a free web publishing plug-in for
 Movable Type, Blosxom, and BBEdit that easily translates plain ASCII
-punctuation characters into "smart" typographic punctuation HTML
+punctuation characters into “smart” typographic punctuation HTML
 entities.
 
 See rubypants.rb for more information.
@@ -34,7 +34,7 @@ Red- and BlueCloth.  Usually, you call RubyPants like this:
   nicehtml = RubyPants.new(uglyhtml, options).to_html
 ```
 
-where +options+ is an Array of Integers and/or Symbols (if you don't
+where +options+ is an Array of Integers and/or Symbols (if you don’t
 pass any options, RubyPants will use <tt>[2]</tt> as default.)
 
 *Note*:: This is incompatible to SmartyPants, which uses <tt>[1]</tt>
@@ -61,12 +61,12 @@ are met:
   the documentation and/or other materials provided with the
   distribution.
 
-* Neither the name "SmartyPants" nor the names of its contributors
+* Neither the name “SmartyPants” nor the names of its contributors
   may be used to endorse or promote products derived from this
   software without specific prior written permission.
 
 This software is provided by the copyright holders and contributors
-"as is" and any express or implied warranties, including, but not
+“as is” and any express or implied warranties, including, but not
 limited to, the implied warranties of merchantability and fitness
 for a particular purpose are disclaimed. In no event shall the
 copyright owner or contributors be liable for any direct, indirect,
@@ -98,7 +98,7 @@ are met:
   distribution.
 
 This software is provided by the copyright holders and contributors
-"as is" and any express or implied warranties, including, but not
+“as is” and any express or implied warranties, including, but not
 limited to, the implied warranties of merchantability and fitness
 for a particular purpose are disclaimed. In no event shall the
 copyright owner or contributors be liable for any direct, indirect,

@@ -1,3 +1,4 @@
+# encoding: utf-8
 #
 # = RubyPants -- SmartyPants ported to Ruby
 #
@@ -76,7 +77,7 @@
 # don't think this problem can be solved in the general case--every
 # word processor I've tried gets this wrong as well. In such cases,
 # it's best to use the proper HTML entity for closing single-quotes
-# ("<tt>&#8217;</tt>") by hand.
+# ("<tt>’</tt>") by hand.
 # 
 # 
 # == Bugs
@@ -294,16 +295,16 @@ class RubyPants < String
             if t == "'"
               # Special case: single-character ' token
               if prev_token_last_char =~ /\S/
-                t = "&#8217;"
+                t = "’"
               else
-                t = "&#8216;"
+                t = "‘"
               end
             elsif t == '"'
               # Special case: single-character " token
               if prev_token_last_char =~ /\S/
-                t = "&#8221;"
+                t = "”"
               else
-                t = "&#8220;"
+                t = "“"
               end
             else
               # Normal case:                  
@@ -345,7 +346,7 @@ class RubyPants < String
   # em-dash HTML entity.
   #
   def educate_dashes(str)
-    str.gsub(/--/, '&#8212;')
+    str.gsub(/--/, '—')
   end
 
   # The string, with each instance of "<tt>--</tt>" translated to an
@@ -353,7 +354,7 @@ class RubyPants < String
   # em-dash HTML entity.
   #
   def educate_dashes_oldschool(str)
-    str.gsub(/---/, '&#8212;').gsub(/--/, '&#8211;')
+    str.gsub(/---/, '—').gsub(/--/, '–')
   end
 
   # Return the string, with each instance of "<tt>--</tt>" translated
@@ -367,7 +368,7 @@ class RubyPants < String
   # Aaron Swartz for the idea.)
   #
   def educate_dashes_inverted(str)
-    str.gsub(/---/, '&#8211;').gsub(/--/, '&#8212;')
+    str.gsub(/---/, '–').gsub(/--/, '—')
   end
 
   # Return the string, with each instance of "<tt>...</tt>" translated
@@ -375,21 +376,21 @@ class RubyPants < String
   # spaces between the dots.
   #
   def educate_ellipses(str)
-    str.gsub('...', '&#8230;').gsub('. . .', '&#8230;')
+    str.gsub('...', '…').gsub('. . .', '…')
   end
 
   # Return the string, with "<tt>``backticks''</tt>"-style single quotes
   # translated into HTML curly quote entities.
   #
   def educate_backticks(str)
-    str.gsub("``", '&#8220;').gsub("''", '&#8221;')
+    str.gsub("``", '“').gsub("''", '”')
   end
 
   # Return the string, with "<tt>`backticks'</tt>"-style single quotes
   # translated into HTML curly quote entities.
   #
   def educate_single_backticks(str)
-    str.gsub("`", '&#8216;').gsub("'", '&#8217;')
+    str.gsub("`", '‘').gsub("'", '’')
   end
 
   # Return the string, with "educated" curly quote HTML entities.
@@ -402,37 +403,37 @@ class RubyPants < String
     # Special case if the very first character is a quote followed by
     # punctuation at a non-word-break. Close the quotes by brute
     # force:
-    str.gsub!(/^'(?=#{punct_class}\B)/, '&#8217;')
-    str.gsub!(/^"(?=#{punct_class}\B)/, '&#8221;')
+    str.gsub!(/^'(?=#{punct_class}\B)/, '’')
+    str.gsub!(/^"(?=#{punct_class}\B)/, '”')
 
     # Special case for double sets of quotes, e.g.:
     #   <p>He said, "'Quoted' words in a larger quote."</p>
-    str.gsub!(/"'(?=\w)/, '&#8220;&#8216;')
-    str.gsub!(/'"(?=\w)/, '&#8216;&#8220;')
+    str.gsub!(/"'(?=\w)/, '“‘')
+    str.gsub!(/'"(?=\w)/, '‘“')
 
     # Special case for decade abbreviations (the '80s):
-    str.gsub!(/'(?=\d\ds)/, '&#8217;')
+    str.gsub!(/'(?=\d\ds)/, '’')
 
     close_class = %![^\ \t\r\n\\[\{\(\-]!
-    dec_dashes = '&#8211;|&#8212;'
+    dec_dashes = '–|—'
     
     # Get most opening single quotes:
     str.gsub!(/(\s|&nbsp;|--|&[mn]dash;|#{dec_dashes}|&#x201[34];)'(?=\w)/,
-             '\1&#8216;')
+             '\1‘')
     # Single closing quotes:
-    str.gsub!(/(#{close_class})'/, '\1&#8217;')
-    str.gsub!(/'(\s|s\b|$)/, '&#8217;\1')
+    str.gsub!(/(#{close_class})'/, '\1’')
+    str.gsub!(/'(\s|s\b|$)/, '’\1')
     # Any remaining single quotes should be opening ones:
-    str.gsub!(/'/, '&#8216;')
+    str.gsub!(/'/, '‘')
 
     # Get most opening double quotes:
     str.gsub!(/(\s|&nbsp;|--|&[mn]dash;|#{dec_dashes}|&#x201[34];)"(?=\w)/,
-             '\1&#8220;')
+             '\1“')
     # Double closing quotes:
-    str.gsub!(/(#{close_class})"/, '\1&#8221;')
-    str.gsub!(/"(\s|s\b|$)/, '&#8221;\1')
+    str.gsub!(/(#{close_class})"/, '\1”')
+    str.gsub!(/"(\s|s\b|$)/, '”\1')
     # Any remaining quotes should be opening ones:
-    str.gsub!(/"/, '&#8220;')
+    str.gsub!(/"/, '“')
 
     str
   end
@@ -444,16 +445,16 @@ class RubyPants < String
   #
   def stupefy_entities(str)
     str.
-      gsub(/&#8211;/, '-').      # en-dash
-      gsub(/&#8212;/, '--').     # em-dash
+      gsub(/–/, '-').      # en-dash
+      gsub(/—/, '--').     # em-dash
       
-      gsub(/&#8216;/, "'").      # open single quote
-      gsub(/&#8217;/, "'").      # close single quote
+      gsub(/‘/, "'").      # open single quote
+      gsub(/’/, "'").      # close single quote
       
-      gsub(/&#8220;/, '"').      # open double quote
-      gsub(/&#8221;/, '"').      # close double quote
+      gsub(/“/, '"').      # open double quote
+      gsub(/”/, '"').      # close double quote
       
-      gsub(/&#8230;/, '...')     # ellipsis
+      gsub(/…/, '...')     # ellipsis
   end
 
   # Return an array of the tokens comprising the string. Each token is

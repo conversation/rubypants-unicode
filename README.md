@@ -1,13 +1,16 @@
-# RubyPants -- SmartyPants ported to Ruby
+# RubyPants — SmartyPants ported to Ruby
+
+Ported to UTF-8 characters instead of HTML Entities by Chris Chapman
+  Copyright © 2012 Chris Chapman
 
 Ported by Christian Neukirchen <mailto:chneukirchen@gmail.com>
-  Copyright (C) 2004 Christian Neukirchen
+  Copyright © 2004 Christian Neukirchen
 
 Incooporates ideas, comments and documentation by Chad Miller
-  Copyright (C) 2004 Chad Miller
+  Copyright © 2004 Chad Miller
 
 Original SmartyPants by John Gruber
-  Copyright (C) 2003 John Gruber
+  Copyright © 2003 John Gruber
 
 
 ## RubyPants
@@ -42,7 +45,7 @@ The exact meaning of numbers and symbols is documented at RubyPants#new.
 
 ## SmartyPants license:
 
-Copyright (c) 2003 John Gruber
+Copyright © 2003 John Gruber
 (http://daringfireball.net)
 All rights reserved.
 
@@ -78,7 +81,7 @@ possibility of such damage.
 
 ## RubyPants license
 
-Copyright (C) 2004 Christian Neukirchen
+Copyright © 2004 Christian Neukirchen
 
 RubyPants is a derivative work of SmartyPants and smartypants.py.
 

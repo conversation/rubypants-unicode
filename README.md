@@ -1,6 +1,6 @@
 # RubyPants — SmartyPants ported to Ruby
 
-Ported to UTF-8 characters instead of HTML Entities by Chris Chapman
+Switched to using UTF-8 characters instead of HTML Entities by Chris Chapman
   Copyright © 2012 Chris Chapman
 
 Ported by Christian Neukirchen <mailto:chneukirchen@gmail.com>
@@ -113,7 +113,7 @@ possibility of such damage.
 
 ## Links
 
-John Gruber:: http://daringfireball.net
-SmartyPants:: http://daringfireball.net/projects/smartypants
-Chad Miller:: http://web.chad.org
-Christian Neukirchen:: http://kronavita.de/chris
+- John Gruber:: http://daringfireball.net
+- SmartyPants:: http://daringfireball.net/projects/smartypants
+- Chad Miller:: http://web.chad.org
+- Christian Neukirchen:: http://kronavita.de/chris

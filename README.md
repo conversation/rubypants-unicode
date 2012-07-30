@@ -1,6 +1,6 @@
-# RubyPants — SmartyPants ported to Ruby
+# RubyPants Unicode — SmartyPants ported to Ruby
 
-Switched to using UTF-8 characters instead of HTML Entities by Chris Chapman
+Switched to unicode output (UTF-8) instead of HTML entities by Chris Chapman
   Copyright © 2012 Chris Chapman
 
 Ported by Christian Neukirchen <mailto:chneukirchen@gmail.com>

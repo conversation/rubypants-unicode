@@ -1,4 +1,4 @@
-= RubyPants -- SmartyPants ported to Ruby
+# RubyPants -- SmartyPants ported to Ruby
 
 Ported by Christian Neukirchen <mailto:chneukirchen@gmail.com>
   Copyright (C) 2004 Christian Neukirchen
@@ -10,7 +10,7 @@ Original SmartyPants by John Gruber
   Copyright (C) 2003 John Gruber
 
 
-== RubyPants
+## RubyPants
 
 RubyPants is a Ruby port of the smart-quotes library SmartyPants.
 
@@ -22,12 +22,14 @@ entities.
 See rubypants.rb for more information.
 
 
-== Incompatibilities
+## Incompatibilities
 
 RubyPants uses a different API than SmartyPants; it is compatible to
 Red- and BlueCloth.  Usually, you call RubyPants like this:
 
+```ruby
   nicehtml = RubyPants.new(uglyhtml, options).to_html
+```
 
 where +options+ is an Array of Integers and/or Symbols (if you don't
 pass any options, RubyPants will use <tt>[2]</tt> as default.)
@@ -38,7 +40,7 @@ pass any options, RubyPants will use <tt>[2]</tt> as default.)
 The exact meaning of numbers and symbols is documented at RubyPants#new.
 
 
-== SmartyPants license:
+## SmartyPants license:
 
 Copyright (c) 2003 John Gruber
 (http://daringfireball.net)
@@ -74,7 +76,7 @@ any way out of the use of this software, even if advised of the
 possibility of such damage.
 
 
-== RubyPants license
+## RubyPants license
 
 Copyright (C) 2004 Christian Neukirchen
 
@@ -106,7 +108,7 @@ any way out of the use of this software, even if advised of the
 possibility of such damage.
 
 
-== Links
+## Links
 
 John Gruber:: http://daringfireball.net
 SmartyPants:: http://daringfireball.net/projects/smartypants

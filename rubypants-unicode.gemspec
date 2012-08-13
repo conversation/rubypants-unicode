@@ -5,6 +5,11 @@ Gem::Specification.new do |s|
   s.version = '0.2.0'
   s.summary = "RubyPants-Unicode is a Ruby port of the smart-quotes library SmartyPants."
   s.description = <<-EOF
+It just occurred to me that if we are encoding our HTML pages in UTF-8 to
+handle multiple languages and using web fonts with multilanguage support,
+shouldn't we be able to directly insert the simple apostrophe, ellipsis, and
+em-dash?
+
 RubyPants-Unicode is a Ruby port of the smart-quotes library SmartyPants that outputs
 unicode characters (UTF-8) instead of HTML entities.
 

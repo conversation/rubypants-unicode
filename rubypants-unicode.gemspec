@@ -24,9 +24,9 @@ entities.
   s.extra_rdoc_files = ["README.md"]
   s.rdoc_options = ["--main", "README.md"]
   s.rdoc_options.concat ['--line-numbers', '--inline-source', '--all']
-  s.rdoc_options.concat ['--exclude',  'test_rubypants.rb']
+  s.rdoc_options.concat ['--exclude',  'test']
   s.require_paths = ['lib']
-  s.authors= ["Chris Chapman", "Christian Neukirchen"]
+  s.authors= ["Christian Neukirchen", "Chris Chapman"]
   s.email = "chris.chapman@aggiemail.usu.edu"
   s.homepage = "https://github.com/cdchapman/rubypants-unicode"
 end

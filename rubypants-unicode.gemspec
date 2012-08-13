@@ -1,8 +1,11 @@
-require 'rake'
+# encoding: utf-8
 
-Gem::Specification.new do |s|
+$: << File.expand_path('../lib', __FILE__)
+require 'rubypants-unicode/version'
+
+spec = Gem::Specification.new do |s|
   s.name = 'rubypants-unicode'
-  s.version = '0.2.1'
+  s.version = RubyPants::VERSION
   s.summary = "RubyPants-Unicode is a Ruby port of the smart-quotes library SmartyPants."
   s.description = <<-EOF
 It just occurred to me that if we are encoding our HTML pages in UTF-8 to
@@ -18,13 +21,13 @@ Movable Type, Blosxom, and BBEdit that easily translates plain ASCII
 punctuation characters into "smart" typographic punctuation HTML
 entities.
   EOF
-  s.files = FileList['**/*rb', 'README.md', 'Rakefile'].to_a
+  s.files = ['lib/rubypants-unicode.rb', 'README.md', 'Rakefile']
   s.test_file = "test_rubypants.rb"
   s.extra_rdoc_files = ["README.md"]
   s.rdoc_options = ["--main", "README.md"]
   s.rdoc_options.concat ['--line-numbers', '--inline-source', '--all']
   s.rdoc_options.concat ['--exclude',  'test_rubypants.rb']
-  s.require_path = '.'
+  s.require_path = 'lib'
   s.authors= ["Chris Chapman", "Christian Neukirchen"]
   s.email = "chris.chapman@aggiemail.usu.edu"
   s.homepage = "https://github.com/cdchapman/rubypants-unicode"

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 require 'test/unit'
-require './rubypants'
+require 'rubypants/unicode'
 
 # Test EVERYTHING against SmartyPants.pl output!
 

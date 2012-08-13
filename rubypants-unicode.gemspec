@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'rubypants-unicode'
-  s.version = '0.2.0'
+  s.version = '0.2.1'
   s.summary = "RubyPants-Unicode is a Ruby port of the smart-quotes library SmartyPants."
   s.description = <<-EOF
 It just occurred to me that if we are encoding our HTML pages in UTF-8 to

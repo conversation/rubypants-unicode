@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+require 'rake'
 require File.expand_path('../lib/rubypants-unicode/version', __FILE__)
 
 Gem::Specification.new do |s|
@@ -19,7 +20,7 @@ Movable Type, Blosxom, and BBEdit that easily translates plain ASCII
 punctuation characters into "smart" typographic punctuation HTML
 entities.
   EOF
-  s.files = ['lib/rubypants-unicode.rb', 'README.md', 'Rakefile']
+  s.files = FileList['lib/**/*.rb', 'README.md', 'Rakefile'].to_a
   s.test_files = ['test/test_rubypants.rb']
   s.extra_rdoc_files = ["README.md"]
   s.rdoc_options = ["--main", "README.md"]

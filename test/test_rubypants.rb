@@ -1,11 +1,8 @@
 # encoding: utf-8
-
-$:.unshift(File.expand_path(File.dirname(__FILE__))); $:.uniq!
-require 'test_helper'
+require 'test/unit'
+require 'rubypants-unicode'
 
 # Test EVERYTHING against SmartyPants.pl output!
-
-
 class TestRubyPants < Test::Unit::TestCase
   def assert_rp_equal(str, orig, options=[2])
     assert_equal orig, RubyPants.new(str, options).to_html

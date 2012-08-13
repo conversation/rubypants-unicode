@@ -1,6 +1,11 @@
 # RubyPants Unicode — SmartyPants ported to Ruby
 
-Switched to unicode output (UTF-8) instead of HTML entities by Chris Chapman
+It just occurred to me that if we are encoding our HTML pages in UTF-8 to
+handle multiple languages and using web fonts with multilanguage support,
+shouldn't we be able to directly insert the simple apostrophe, ellipsis, and
+em-dash?
+
+Switched to direct unicode output (UTF-8) instead of HTML entities by Chris Chapman
   Copyright © 2012 Chris Chapman
 
 Ported by Christian Neukirchen <mailto:chneukirchen@gmail.com>

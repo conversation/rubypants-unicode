@@ -1,5 +1,6 @@
 # Rakefile for rubypants  -*-ruby-*-
 require 'rdoc/task'
+require 'rake/testtask'
 require 'rubygems/package_task'
 
 
@@ -9,11 +10,11 @@ task :default => [:test]
 desc "Do predistribution stuff"
 task :predist => [:doc]
 
-
-desc "Run all the tests"
-task :test do
-  ruby 'test_rubypants.rb'
+Rake::TestTask.new(:test) do |t|
+  t.pattern = "#{File.dirname(__FILE__)}/test/all.rb"
+  t.verbose = true
 end
+Rake::Task['test'].comment = "Run all rubypants tests"
 
 desc "Generate RDoc documentation"
 Rake::RDocTask.new(:doc) do |rdoc|

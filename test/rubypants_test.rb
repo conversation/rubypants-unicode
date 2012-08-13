@@ -1,7 +1,7 @@
 # encoding: utf-8
 
-require 'test/unit'
-require 'rubypants/unicode'
+$:.unshift(File.expand_path(File.dirname(__FILE__))); $:.uniq!
+require 'test_helper'
 
 # Test EVERYTHING against SmartyPants.pl output!
 

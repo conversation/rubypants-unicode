@@ -178,7 +178,6 @@
 
 
 class RubyPants < String
-  VERSION = "0.2"
 
   # Create a new RubyPants instance with the text in +string+.
   #

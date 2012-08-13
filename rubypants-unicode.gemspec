@@ -22,7 +22,7 @@ punctuation characters into "smart" typographic punctuation HTML
 entities.
   EOF
   s.files = ['lib/rubypants-unicode.rb', 'README.md', 'Rakefile']
-  s.test_file = "test_rubypants.rb"
+  s.test_file = Dir.glob('test/*rb')
   s.extra_rdoc_files = ["README.md"]
   s.rdoc_options = ["--main", "README.md"]
   s.rdoc_options.concat ['--line-numbers', '--inline-source', '--all']

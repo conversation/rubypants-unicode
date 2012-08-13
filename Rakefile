@@ -8,7 +8,7 @@ end
 desc "Generate RDoc documentation"
 Rake::RDocTask.new(:doc) do |rdoc|
  rdoc.options << '--line-numbers --inline-source --all'
- rdoc.rdoc_files.include 'README'
+ rdoc.rdoc_files.include 'README.md'
  rdoc.rdoc_files.include 'lib'
 end
 

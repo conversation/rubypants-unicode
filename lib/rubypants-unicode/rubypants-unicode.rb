@@ -262,7 +262,7 @@ class RubyPants < String
     tokens.each { |token|
       if token.first == :tag
         result << token[1]
-        if token[1] =~ %r!<(/?)(?:pre|code|kbd|script|math)[\s>]!
+        if token[1] =~ %r!<(/?)(?:pre|code|kbd|script|style|math)[\s>]!
           in_pre = ($1 != "/")  # Opening or closing tag?
         end
       else

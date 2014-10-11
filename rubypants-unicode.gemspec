@@ -32,7 +32,8 @@ entities.
                 "Chad Miller",
                 "Christian Neukirchen", 
                 "Jeremy McNevin",
-                "Chris Chapman"
+                "Chris Chapman",
+                "Jared White"
               ]
   s.email = "chris.chapman@aggiemail.usu.edu"
   s.homepage = "https://github.com/cdchapman/rubypants-unicode"

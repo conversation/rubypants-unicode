@@ -27,7 +27,14 @@ entities.
   s.rdoc_options.concat ['--line-numbers', '--inline-source', '--all']
   s.rdoc_options.concat ['--exclude',  'test']
   s.require_paths = ['lib']
-  s.authors= ["Christian Neukirchen", "Chris Chapman"]
+  s.authors = [
+                "John Gruber",
+                "Chad Miller",
+                "Christian Neukirchen", 
+                "Jeremy McNevin",
+                "Chris Chapman"
+              ]
   s.email = "chris.chapman@aggiemail.usu.edu"
   s.homepage = "https://github.com/cdchapman/rubypants-unicode"
+  s.license = 'MIT'
 end

@@ -158,4 +158,13 @@ EOF
     assert_rp_equal %q{foo\*bar}, "foo\\*bar"
     assert_rp_equal %q{foo\&bar}, "foo\\&bar"
   end
+
+  def test_html_comments
+
+    assert_rp_equal "-->", "-->"
+    assert_rp_equal "-->", "-->", [:oldschool]
+    assert_rp_equal "-->", "-->", [:inverted]
+
+  end
+
 end

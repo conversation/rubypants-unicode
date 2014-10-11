@@ -345,7 +345,7 @@ class RubyPants < String
   # em-dash HTML entity.
   #
   def educate_dashes(str)
-    str.gsub(/--/, '—')
+    str.gsub(/--(?!>)/, '—')
   end
 
   # The string, with each instance of "<tt>--</tt>" translated to an
@@ -353,7 +353,7 @@ class RubyPants < String
   # em-dash HTML entity.
   #
   def educate_dashes_oldschool(str)
-    str.gsub(/---/, '—').gsub(/--/, '–')
+    str.gsub(/---/, '—').gsub(/--(?!>)/, '–')
   end
 
   # Return the string, with each instance of "<tt>--</tt>" translated
@@ -367,7 +367,7 @@ class RubyPants < String
   # Aaron Swartz for the idea.)
   #
   def educate_dashes_inverted(str)
-    str.gsub(/---/, '–').gsub(/--/, '—')
+    str.gsub(/---/, '–').gsub(/--(?!>)/, '—')
   end
 
   # Return the string, with each instance of "<tt>...</tt>" translated

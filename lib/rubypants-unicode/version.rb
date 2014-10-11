@@ -1,3 +1,3 @@
-class RubyPants
-  VERSION = "0.2.3"
+class RubyPants < String
+  VERSION = "0.2.4"
 end

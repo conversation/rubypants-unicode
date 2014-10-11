@@ -44,7 +44,7 @@
 # quotes, em-dashes, and proper ellipses.
 # 
 # RubyPants does not modify characters within <tt><pre></tt>,
-# <tt><code></tt>, <tt><kbd></tt>, <tt><math></tt> or
+# <tt><code></tt>, <tt><kbd></tt>, <tt><math></tt>, <tt>style</tt>, or
 # <tt><script></tt> tag blocks. Typically, these tags are used to
 # display text where smart quotes and other "smart punctuation" would
 # not be appropriate, such as source code or example markup.
@@ -262,7 +262,7 @@ class RubyPants < String
     tokens.each { |token|
       if token.first == :tag
         result << token[1]
-        if token[1] =~ %r!<(/?)(?:pre|code|kbd|script|math)[\s>]!
+        if token[1] =~ %r!<(/?)(?:pre|code|kbd|script|style|math)[\s>]!
           in_pre = ($1 != "/")  # Opening or closing tag?
         end
       else

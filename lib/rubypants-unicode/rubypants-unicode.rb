@@ -177,7 +177,7 @@
 #
 
 
-class RubyPants < String
+class RubyPantsUnicode < String
 
   # Create a new RubyPants instance with the text in +string+.
   #

@@ -4,7 +4,7 @@ require File.expand_path('../lib/rubypants-unicode/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'rubypants-unicode'
-  s.version = RubyPants::VERSION
+  s.version = RubyPantsUnicode::VERSION
   s.summary = "RubyPants-Unicode is a Ruby port of the smart-quotes library SmartyPants."
   s.description = <<-EOF
 It just occurred to me that if we are encoding our HTML pages in UTF-8 to

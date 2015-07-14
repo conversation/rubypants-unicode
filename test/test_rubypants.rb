@@ -73,8 +73,8 @@ EOF
 
     assert_rp_equal "foo--bar", 'foo–bar', 2
     assert_rp_equal "foo---bar", 'foo—bar', 2
-    assert_rp_equal "foo----bar", 'foo—-bar', 2
-    assert_rp_equal "foo-----bar", 'foo—–bar', 2
+    assert_rp_equal "foo----bar", 'foo----bar', 2
+    assert_rp_equal "foo-----bar", 'foo-----bar', 2
     assert_rp_equal "--foo--bar--quux--",
                     '–foo–bar–quux–', 2
 

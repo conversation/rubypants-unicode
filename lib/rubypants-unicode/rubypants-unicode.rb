@@ -353,7 +353,7 @@ class RubyPantsUnicode < String
   # em-dash HTML entity.
   #
   def educate_dashes_oldschool(str)
-    str.gsub(/---/, '—').gsub(/--(?!>)/, '–')
+    str.gsub(/(?<!-)---(?!-)/, '—').gsub(/(?<!-)--(?!>|-)/, '–')
   end
 
   # Return the string, with each instance of "<tt>--</tt>" translated

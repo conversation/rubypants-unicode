@@ -5,7 +5,7 @@ require 'rubypants-unicode'
 # Test EVERYTHING against SmartyPants.pl output!
 class TestRubyPants < Test::Unit::TestCase
   def assert_rp_equal(str, orig, options=[2])
-    assert_equal orig, RubyPants.new(str, options).to_html
+    assert_equal orig, RubyPantsUnicode.new(str, options).to_html
   end
 
   def assert_verbatim(str)
